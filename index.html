@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>自如机试题</title>
+    <script>
+        //rem转换
+        function rem() {
+            var w = Math.min(document.documentElement.getBoundingClientRect().width, 500);
+            document.getElementsByTagName('html')[0].style.fontSize = w * 100 / 375 + 'px';
+        }
+        rem();
+        window.onresize = function(){rem();};
+    </script>
+    <link href="../css/index.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div class="container">
+    <div class="slick" id="slickCon">
+    </div>
+    <a class="top-back" href="#"></a>
+    <button class="top-share"></button>
+</div>
+
+
+<script src="../js/jquery-1.12.4.min.js"></script>
+<!--轮播-->
+<script src="../js/slick.js"></script>
+<!--模板-->
+<script src="../js/mustache.min.js"></script>
+
+<script id="slickTem" type="x-tmpl-mustache">
+{{#data}}
+    <div><img src="{{photos_min.0}}" /></div>
+{{/data}}
+</script>
+
+<!--主要js-->
+<script src="../js/index.js"></script>
+</body>
+</html>
